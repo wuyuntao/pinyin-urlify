@@ -12,10 +12,10 @@ pinyin_map = dict([(ord(k), v[0])for k, v in pinyin_map.items()])
 for i in xrange(len(western_maps)):
     western_maps[i] = dict([(ord(k), v) for k, v in western_maps[i].items()])
 
-stop_words = [u'a', u'an', u'as', u'at', u'before', u'but', u'by', u'for', u'from',
-              u'is', u'in', u'into', u'like', u'of', u'off', u'on', u'onto', u'per',
-              u'since', u'than', u'the', u'this', u'that', u'to', u'up', u'via',
-              u'with']
+stop_words = [u'a', u'an', u'as', u'at', u'before', u'but', u'by', u'for',
+              u'from', u'is', u'in', u'into', u'like', u'of', u'off', u'on',
+              u'onto', u'per', u'since', u'than', u'the', u'this', u'that',
+              u'to', u'up', u'via', u'with']
 
 reserved_words = [u'blog', u'edit', u'delete', u'new', u'popular', u'wiki']
 
