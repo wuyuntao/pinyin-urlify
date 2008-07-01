@@ -7,7 +7,7 @@ convert chinese unicode character into pinyin
 """
 
 import unittest
-from doupye.utils.urlify import urlify
+from urlify import urlify
 
 class PinYinTestCase(unittest.TestCase):
     def testChinese(self):
