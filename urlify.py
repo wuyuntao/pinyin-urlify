@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
 
-"""
 import re
 from maps import *
 
@@ -24,10 +22,26 @@ reserved_words = [u'blog', u'edit', u'delete', u'new', u'popular', u'wiki']
 
 def urlify(urlstring, default='default', max_length=50,
            stop_words=stop_words, reserved_words=reserved_words):
-    '''
-    populates a normalized urlstring
+    """
+    Urlify is a simple function that generates the slug of a urlstring
+    automatically using python.
 
-    '''
+    Urlify has support for language maps. Language maps work by replacing
+    kanji with pinyin and characters in other western languages with similar
+    ones in English. The replacement is done in the generated slug only.
+    For example, a urlstring "派森是好物" will create a slug of 
+    "pai-sen-shi-hao-wu" and a urlstring "Это простое испытание название" 
+    will create a slug of "eto-prostoe-ispytanie-nazvanie".
+
+    There is support for PinYin, Latin, Greek, Turkish, Russian, Ukranian, 
+    Czech and Polish maps. These maps are acquired from pyzh project
+    <http://code.google.com/p/pyzh/> and Django project
+    <http://www.djangoproject.com/>. So these maps are not under the tems of 
+    GPLv3 license.
+	
+    Urlify also has support for stop words and reserved words.
+
+    """
 
     slug = ''
 
@@ -57,4 +71,3 @@ def urlify(urlstring, default='default', max_length=50,
         slug = default
 
     return slug
-

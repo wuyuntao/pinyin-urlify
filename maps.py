@@ -1,4 +1,13 @@
 # -*- coding: UTF-8 -*-
+"""
+Urlify has support for PinYin, Latin, Greek, Turkish, Russian, Ukranian, 
+Czech and Polish maps. These maps are acquired from pyzh project
+<http://code.google.com/p/pyzh/> and Django project
+<http://www.djangoproject.com/>. So these maps are not under the tems of 
+GPLv3 license.
+
+"""
+
 
 pinyin_map = {
 u'耀':(u'yao',), 

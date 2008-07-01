@@ -1,10 +1,4 @@
-#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
-"""
-convert chinese unicode character into pinyin
-
-"""
 
 import unittest
 from urlify import urlify
