@@ -28,15 +28,15 @@ class PinYinTestCase(unittest.TestCase):
         self.assertEqual(urlify(u''),
                          u'default')
 
-    def testNotInDict(self):
+    def testNotInMaps(self):
         self.assertEqual(urlify(u'コにちわ'),
                          u'default')
 
-    def testRemoveKeywords(self):
+    def testStopWords(self):
         self.assertEqual(urlify(u'hello, this is an blahblah'),
                          u'hello-blahblah')
 
-    def testReservedKeywords(self):
+    def testReservedWords(self):
         self.assertEqual(urlify(u'  blog  '),
                          u'default')
 
