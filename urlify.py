@@ -46,7 +46,7 @@ def urlify(urlstring, default='default', max_length=50,
     slug = ''
 
     re_alnum = re.compile(r'[\w\s\-]+')
-    re_remove = re.compile('|'.join([r'\b%s\b' % word for word in stop_words]))
+    re_stop = re.compile('|'.join([r'\b%s\b' % word for word in stop_words]))
     re_reserved = re.compile('|'.join([r'\b%s\b' % word for word in reserved_words]))
     re_space = re.compile(r'[\s_\-]+')
 
@@ -65,7 +65,7 @@ def urlify(urlstring, default='default', max_length=50,
                 slug += dict[char_ord]
                 break
 
-    slug = re_remove.sub(u'', slug.lower())
+    slug = re_stop.sub(u'', slug.lower())
     slug = re_space.sub(u'-', slug.strip())
     if slug is '' or re_reserved.match(slug):
         slug = default
