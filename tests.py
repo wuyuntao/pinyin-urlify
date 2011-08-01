@@ -44,6 +44,16 @@ class PinYinTestCase(unittest.TestCase):
         self.assertEqual(urlify(u'urlstring url instance class request embodies. Example, data headers, calling:'),
                          u'urlstring-url-instance-class-request-embodies-exam')
 
+    def testHyphen(self):
+        self.assertEqual(urlify(u'Hello•Hello'),
+                         u'xuan-feng-dao-ying-2008-imagetunnel')
+        #self.assertEqual(urlify(u'旋风倒影•2008•Imagetunnel'),
+        #                 u'xuan-feng-dao-ying-2008-imagetunnel')
+        #self.assertEqual(urlify(u'旋风倒影•2008•Imagetunnel'),
+        #                 u'xuan-feng-dao-ying-2008-imagetunnel')
+
+    def testUnderline(self):
+        self.assertEqual(urlify(u'pinyin urlify_30'), 'pinyin-urlify-30')
 
 if __name__ == '__main__':
     unittest.main()
